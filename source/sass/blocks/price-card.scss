@@ -1,0 +1,159 @@
+.price-card {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  padding: 50px 42px;
+  background-color: #ffffff;
+
+  @media (min-width: $tablet-width) {
+    gap: 22px;
+    padding: 65px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 17px;
+  }
+}
+
+.price-card__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 22px;
+  color: #102654;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.price-card__description {
+  margin: 0;
+  text-align: center;
+}
+
+.price-card__subscription-price-wrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  min-height: 120px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    min-height: 150px;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 150%;
+    color: #e8e8e8;
+    opacity: 0.48;
+
+    @media (min-width: $tablet-width) {
+      font-size: 100px;
+    }
+  }
+}
+
+.price-card__subscription-cost {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: dense;
+  align-self: end;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    gap: 14px;
+  }
+
+  b {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 150%;
+    color: #103aae;
+
+    @media (min-width: $tablet-width) {
+      font-size: 60px;
+    }
+  }
+
+  img {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @media (min-width: $tablet-width) {
+      width: 30px;
+      height: 42px;
+    }
+  }
+}
+
+.price-card__link-buy {
+  min-width: 206px;
+  text-decoration: none;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 7px solid transparent;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-width: 250px;
+
+    &:hover {
+      &::before {
+        border-image: linear-gradient(145deg, #d10a42 0%, #00359f 100%);
+        border-image-slice: 1;
+        border-image-outset: 7px;
+      }
+    }
+  }
+
+  &:focus-visible {
+    &::before {
+      border-image: linear-gradient(145deg, #d10a42 0%, #00359f 100%);
+      border-image-slice: 1;
+      border-image-outset: 7px;
+    }
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      &::before {
+        border-image: linear-gradient(145deg, #d10a42 0%, #00359f 100%);
+        border-image-slice: 1;
+        border-image-outset: 7px;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 230px;
+  }
+}

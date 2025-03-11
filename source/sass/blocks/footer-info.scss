@@ -1,0 +1,32 @@
+.footer-info__container {
+  display: grid;
+  gap: 30px;
+  padding: 40px 15px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.footer-info__logo-wrapper {
+  @media (min-width: $tablet-width) {
+    align-self: start;
+  }
+}
+
+.footer-info__socials-link-wrapper {
+  @media (min-width: $tablet-width) {
+    align-self: start;
+  }
+}

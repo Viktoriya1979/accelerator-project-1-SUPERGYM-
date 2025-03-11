@@ -1,0 +1,150 @@
+.button {
+  display: inline-block;
+  padding: 15px 8px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #102654;
+  background-color: transparent;
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(16, 37, 84, 0.2);
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, color 0.3s, box-shadow 0.3s ease-out;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 18px;
+    line-height: 18px;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px #102654;
+    }
+  }
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: inset 0 0 0 1px #102654;
+    background-color: #ffffff;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 0;
+      box-shadow: inset 0 0 0 1px #102654;
+      background-color: #ffffff;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    background: linear-gradient(119deg, #ed0233 24%, #003eb7 100%);
+    color: #ffffff;
+  }
+
+  &:disabled {
+    color: #c8c9cc;
+    pointer-events: none;
+  }
+
+  &--dark-border,
+  &--light-border {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+  }
+
+  &--dark-border {
+    padding-top: 27px;
+    padding-bottom: 27px;
+    box-shadow: inset 0 0 0 2px #102654;
+
+    @media (min-width: $tablet-width) {
+      &:hover {
+        box-shadow: none;
+        background: linear-gradient(119deg, #ed0233 24%, #003eb7 100%);
+        color: #ffffff;
+      }
+    }
+
+    &:focus-visible {
+      outline: 0;
+      box-shadow: inset 0 0 0 2px #000000;
+      color: #ffffff;
+      background: linear-gradient(119deg, rgba(237, 2, 53, 0.8) 24%, rgba(0, 61, 183, 0.8) 100%);
+    }
+
+    @supports not selector(:focus-visible) {
+      &:focus {
+        outline: 0;
+        box-shadow: inset 0 0 0 2px #000000;
+        color: #ffffff;
+        background: linear-gradient(119deg, rgba(237, 2, 53, 0.8) 24%, rgba(0, 61, 183, 0.8) 100%);
+      }
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      color: rgba(16, 37, 84, 0.3);
+      pointer-events: none;
+    }
+  }
+
+  &--light-border {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    color: #ffffff;
+
+    @media (min-width: $tablet-width) {
+      padding-top: 22px;
+      padding-bottom: 22px;
+
+      &:hover {
+        box-shadow: none;
+        background-color: #ffffff;
+        color: #103aae;
+      }
+    }
+
+    &:focus-visible {
+      outline: 0;
+      box-shadow: inset 0 0 0 2px #000000;
+      color: #103aae;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    @supports not selector(:focus-visible) {
+      &:focus {
+        outline: 0;
+        box-shadow: inset 0 0 0 2px #000000;
+        color: #103aae;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &:active {
+      background: #ffffff;
+      color: #102654;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      color: #ffffff;
+      pointer-events: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-top: 27px;
+      padding-bottom: 27px;
+    }
+  }
+}

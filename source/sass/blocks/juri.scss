@@ -1,0 +1,169 @@
+.juri__container {
+  padding: 40px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.juri__title {
+  margin: 0 0 20px;
+  font-family: "Alumni Sans", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 46px;
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .juri__swiper-button.swiper-button-prev,
+  .juri__swiper-button.swiper-button-next {
+    display: none;
+  }
+}
+
+.juri__button-wrapper {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    display: block;
+  }
+
+  @media (min-width: $tablet-width) and (width <= 1365px) {
+    width: calc(100% - 90px);
+    max-width: 1160px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: calc(100% - 90px);
+    max-width: 1276px;
+  }
+}
+
+.juri__swiper-button.swiper-button-prev,
+.juri__swiper-button.swiper-button-next {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  margin-top: 0;
+  padding: 4px;
+  min-width: 59px;
+  min-height: 300px;
+  border: 0;
+  background-color: transparent;
+  cursor: auto;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+  }
+
+  &::after {
+    width: 50px;
+    height: 50px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 18px 32px;
+    mask-image: url("/__spritemap#sprite-arrow-slider-view");
+    background-color: #102654;
+  }
+
+  &::before {
+    transition: border-color 0.3s ease-out;
+  }
+
+  @media (min-width: $tablet-width) {
+    &:hover {
+      &::before {
+        border-color: #102654;
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: 0;
+
+    &::before {
+      background-color: #e8e8e8;
+      border-color: #102654;
+    }
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 0;
+
+      &::before {
+        background-color: #e8e8e8;
+        border-color: #102654;
+      }
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: #102654;
+      border-color: #102654;
+    }
+
+    &::after {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.juri__swiper-button.swiper-button-next {
+  right: -15px;
+
+  @media (min-width: $desktop-width) {
+    right: 40px;
+  }
+}
+
+.juri__swiper-button.swiper-button-prev {
+  left: -15px;
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  @media (min-width: $desktop-width) {
+    left: -75px;
+  }
+}
+
+.juri__swiper-container {
+  width: 260px;
+  min-height: 300px;
+
+  @media (min-width: $tablet-width) {
+    width: 560px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}

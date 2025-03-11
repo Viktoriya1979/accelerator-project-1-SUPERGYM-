@@ -1,0 +1,123 @@
+.button-play {
+  position: relative;
+  z-index: 4;
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 2px solid rgba(237, 2, 53, 0.2);
+  border-radius: 50%;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease-out;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    transition: background-color 0.3s ease-out;
+  }
+
+  &::before {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(95deg, #ed0233 20%, #003eb7 100%);
+  }
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    mask-image: url("/__spritemap#sprite-polygon-view");
+    mask-repeat: no-repeat;
+    mask-position: 53% 49%;
+    mask-size: 12px 12px;
+  }
+
+  @media (min-width: $tablet-width) {
+    &:hover {
+      border-color: rgba(16, 37, 84, 0.6);
+
+      &::before {
+        background: #ffffff;
+      }
+
+      &::after {
+        background-color: rgba(16, 37, 84, 0.6);
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: 0;
+    border-color: #102654;
+
+    &::before {
+      background: #c8c9cc;
+    }
+
+    &::after {
+      background-color: #102654;
+    }
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 0;
+      border-color: #102654;
+
+      &::before {
+        background: #c8c9cc;
+      }
+
+      &::after {
+        background-color: #102654;
+      }
+    }
+  }
+
+  &:active {
+    border-color: #102654;
+
+    &::before {
+      background: #ffffff;
+    }
+
+    &::after {
+      background-color: #102654;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    border-color: #102654;
+    pointer-events: none;
+
+    &::before {
+      background: #ffffff;
+    }
+
+    &::after {
+      background-color: #102654;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100px;
+    height: 100px;
+
+    &::before {
+      width: 72px;
+      height: 72px;
+    }
+
+    &::after {
+      mask-size: 17px 17px;
+    }
+  }
+}
